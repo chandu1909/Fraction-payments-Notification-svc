@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.fraction'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.projectlombok:lombok:1.18.22'
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.2'
+	annotationProcessor 'org.projectlombok:lombok:1.18.22'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools:2.6.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '2.6.3'
+	implementation group: 'org.springframework.amqp', name: 'spring-rabbit', version: '2.4.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

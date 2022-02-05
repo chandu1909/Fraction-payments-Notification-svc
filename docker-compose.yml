@@ -1,0 +1,12 @@
+version: "3.6"
+services:
+  notificationApp:
+    container_name: notification-svc
+    image: fraction-notifications:latest
+    build: ./
+    ports:
+      - "8091:8091"
+networks:
+  default:
+    external: true
+    name: fractionNetwork
